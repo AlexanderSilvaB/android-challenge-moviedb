@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.challenge.jungledevs.themoviedb.services.ServiceBuilder
 import com.challenge.jungledevs.themoviedb.services.TheMovieDBDataSource
 import com.challenge.jungledevs.themoviedb.services.TheMovieDBApi
+import com.challenge.jungledevs.themoviedb.view.BlankFragment
 import com.challenge.jungledevs.themoviedb.view.TrendingFragment
 import com.challenge.jungledevs.themoviedb.viewmodel.MoviesListViewModel
 
@@ -29,21 +30,13 @@ class MainItemsAdapter(context: Context, fm: FragmentManager) : FragmentPagerAda
 
     override fun getItem(position: Int): Fragment {
         val fragment = when(position){
-            HOME -> TrendingFragment.newInstance(
-                viewModel
-            )
+            HOME -> BlankFragment.newInstance()
             TOP -> TrendingFragment.newInstance(
                 viewModel
             )
-            SEARCH -> TrendingFragment.newInstance(
-                viewModel
-            )
-            TRENDING -> TrendingFragment.newInstance(
-                viewModel
-            )
-            else -> TrendingFragment.newInstance(
-                viewModel
-            )
+            SEARCH -> BlankFragment.newInstance()
+            TRENDING -> BlankFragment.newInstance()
+            else -> BlankFragment.newInstance()
         }
         return fragment
     }
