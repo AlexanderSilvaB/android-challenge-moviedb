@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">The Movie DB</string>
+    <string name="movies_list_failure">Could not load the trending list</string>
+    <string name="movies_search_failure">Could not load the movies list</string>
+    <string name="movie_load_failure">Could not load the movie details</string>
+    <string name="top_title">Top movie this week</string>
+    <string name="top_movies">Top Movies</string>
+    <string name="search_placeholder">Movie name...</string>
+    <string name="also_trending">Also trending</string>
+    <string name="try_again">Try again</string>
+</resources>

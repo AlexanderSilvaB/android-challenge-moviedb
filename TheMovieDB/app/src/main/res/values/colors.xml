@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#070818</color>
+    <color name="colorAccent">#007CFF</color>
+    <color name="trending">#1b1c2a</color>
+    <color name="trendingFeature">#252634</color>
+    <color name="trendingFeatureTop">#1f8cff</color>
+    <color name="background">#070818</color>
+    <color name="gold">#ffb825</color>
+</resources>
