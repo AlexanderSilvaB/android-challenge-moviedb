@@ -125,7 +125,7 @@ class TrendingFragment : Fragment(), NavigationInterface {
             viewModel.search(query, pageNum)
         }
         else if(page == "movie")
-            viewModel.loadSelected()
+            viewModel.loadSelected {}
     }
 
     private fun loadFragment(fragment: Fragment, tag: String){

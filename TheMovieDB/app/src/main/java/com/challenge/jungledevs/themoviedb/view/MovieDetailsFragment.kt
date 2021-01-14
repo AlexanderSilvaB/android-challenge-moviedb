@@ -1,16 +1,23 @@
 package com.challenge.jungledevs.themoviedb.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.constraintlayout.widget.Constraints
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.challenge.jungledevs.themoviedb.R
 import com.challenge.jungledevs.themoviedb.adapters.MoviesListAdapter
 import com.challenge.jungledevs.themoviedb.databinding.MovieDetailsFragmentBinding
-import com.challenge.jungledevs.themoviedb.databinding.MoviesListFragmentBinding
-import com.challenge.jungledevs.themoviedb.viewmodel.NavigationInterface
 import com.challenge.jungledevs.themoviedb.viewmodel.MoviesListViewModel
+import com.challenge.jungledevs.themoviedb.viewmodel.NavigationInterface
+
 
 class MovieDetailsFragment : Fragment() {
 
@@ -39,7 +46,7 @@ class MovieDetailsFragment : Fragment() {
                 nav
             )
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-        viewModel.loadSelected()
+        viewModel.loadSelected { }
         return binding.root
     }
 

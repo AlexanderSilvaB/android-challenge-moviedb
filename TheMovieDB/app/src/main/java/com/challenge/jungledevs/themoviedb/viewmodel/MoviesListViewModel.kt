@@ -136,7 +136,7 @@ class MoviesListViewModel(val data_source: TheMovieDBDataSource, val context: Co
             search(searchQuery.get() as String, (searchPage.get() as Int) + 1)
     }
 
-    fun loadSelected(){
+    fun loadSelected(callback: (success: Boolean) -> Unit ){
         loadingVisibility.set(true)
         errorVisibility.set(false)
         message.set("")
@@ -146,21 +146,25 @@ class MoviesListViewModel(val data_source: TheMovieDBDataSource, val context: Co
                     loadMovie(it, {
                         loadingVisibility.set(false)
                         select(selected.get()!!)
+                        callback(true)
                     }, {
                         message.set(context.getString(R.string.movie_load_failure))
                         loadingVisibility.set(false)
                         errorVisibility.set(true)
+                        callback(false)
                     })
                 }
             }, {
                 message.set(context.getString(R.string.movie_load_failure))
                 loadingVisibility.set(false)
                 errorVisibility.set(true)
+                callback(false)
             })
         }, {
             message.set(context.getString(R.string.movie_load_failure))
             loadingVisibility.set(false)
             errorVisibility.set(true)
+            callback(false)
         })
     }
 
